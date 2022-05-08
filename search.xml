@@ -232,4 +232,30 @@
         <category>思考</category>
       </categories>
   </entry>
+  <entry>
+    <title>Pycharm正常显示中文</title>
+    <url>/2022/3GF9Z4P/</url>
+    <content><![CDATA[<h2 id="一、起因"><a href="#一、起因" class="headerlink" title="一、起因"></a>一、起因</h2><p>最近在使用python的matplotlib画图时发现无法显示中文标签，使用<code>plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]</code>指定中文字体后问题依然没有解决，后来检查发现SimHei字体没有安装。</p>
+<h2 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h2><p>解决方法：安装SimHei字体</p>
+<p>步骤：</p>
+<p>1、下载SimHei.ttl文件，附带下载地址：<a href="https://github.com/StellarCN/scp_zh/blob/master/fonts/SimHei.ttf">https://github.com/StellarCN/scp_zh/blob/master/fonts/SimHei.ttf</a></p>
+<p>2、将SimHei.ttl文件拷贝到当前使用版本的python包中的ttl文件夹下：</p>
+<p><code>/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf</code></p>
+<p>文件夹位置可以通过如下方式获取，在python环境下输入如下指令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import matplotlib</span><br><span class="line">print(matplotlib.matplotlib_fname())</span><br></pre></td></tr></table></figure>
+
+<p>3、删除matplotlib的缓冲目录，在python环境下输入如下指令获取缓存路径：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import matplotlib</span><br><span class="line">matplotlib.get_cachedir()</span><br></pre></td></tr></table></figure>
+
+<p>使用rm -rf删除目录</p>
+<p>4、修改matplotlibrc文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">font.family  : sans-serif</span><br><span class="line">font.sans-serif : SimHei,</span><br><span class="line">axes.unicode_minus : False</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三、Done"><a href="#三、Done" class="headerlink" title="三、Done"></a>三、Done</h2>]]></content>
+      <categories>
+        <category>日常问题解决</category>
+      </categories>
+  </entry>
 </search>
