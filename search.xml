@@ -273,4 +273,30 @@
     <content><![CDATA[<h2 id="All-in人工智能"><a href="#All-in人工智能" class="headerlink" title="All-in人工智能"></a>All-in人工智能</h2><p>时至今日，我依然坚定的认为人工智能是未来经济发展的动力之一，就像过去二十年辉煌的互联网一样，人工智能也会迎来前面改变人类生活的时代。当然，我知道现在的人工智能前沿技术已经遇到瓶颈，超大规模的模型只是在不断的推数据，加算力。不过，就像2000年你不会想到20年后互联网的影响一样，现在的我也没有足够的认知与自信能预测未来是什么样子。只能基于一些理性和感性的想法，理性是认为社会的发展源于人类对于效率的提升，人工智能在提升效率方面是目前可见的最先进的技术手段。感性是认为这个东西是真的很酷，魅力无法阻挡。综上所述，我将all-in人工智能，从技术出发，在人工智能的大产业链上付出我的全部职业生涯。</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>jupyter notebook python内核问题</title>
+    <url>/2022/9VBCV6/</url>
+    <content><![CDATA[<h2 id="jupyter-notebook-python内核问题"><a href="#jupyter-notebook-python内核问题" class="headerlink" title="jupyter notebook python内核问题"></a>jupyter notebook python内核问题</h2><h3 id="1、起因"><a href="#1、起因" class="headerlink" title="1、起因"></a>1、起因</h3><p>好久没用过jupyter，今天想看看之前在上面写的一些程序，但是在运行的时候报ModuleNotFoundError，非常奇怪的现象，难道是解释器有问题吗？随后我查看了一下juputer的内核，内核使用的是Python 3 (ipykernel)，那么这个内核使用的是哪个环境呢？想到这里就可以得出一个简单的猜测，jupyter指定的内核环境有问题。</p>
+<h3 id="2、分析"><a href="#2、分析" class="headerlink" title="2、分析"></a>2、分析</h3><p>首先，根据以上的猜测，我需要找到jupyter指定的python环境的位置，通过一下命令可以得到：</p>
+<p><code>ipython kernelspec list</code></p>
+<p>输出的结果为：</p>
+<img src="/2022/9VBCV6/图片1.png" width="60%" height="40%" align="left">
+
+
+
+<p>由此可知jupyter指定的名为python3的内核使用的环境位置。进入上述目录，找到keral.json文件并打开：</p>
+<img src="/2022/9VBCV6/图片2.png" width="30%" height="20%" align="left">
+
+
+
+
+
+<h3 id="3、解决问题"><a href="#3、解决问题" class="headerlink" title="3、解决问题"></a>3、解决问题</h3><p>将第三行的地址改成你想要在jupyter中使用的环境的地址，退出出保存。重启jupyter即可。</p>
+<h3 id="4、补充"><a href="#4、补充" class="headerlink" title="4、补充"></a>4、补充</h3><p>（1）后来试验了一下，如果使用anaconda创建的环境，当使用conda activate env进入某个环境后，jupyter就自动指向该环境。</p>
+<p>（2）Mac在更新新系统后，删除了自带的python2环境，所以现在在终端中输入python会not found。</p>
+<h3 id="5、Done"><a href="#5、Done" class="headerlink" title="5、Done"></a>5、Done</h3>]]></content>
+      <categories>
+        <category>日常问题解决</category>
+      </categories>
+  </entry>
 </search>
