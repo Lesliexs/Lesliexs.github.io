@@ -280,12 +280,12 @@
 <h3 id="2、分析"><a href="#2、分析" class="headerlink" title="2、分析"></a>2、分析</h3><p>首先，根据以上的猜测，我需要找到jupyter指定的python环境的位置，通过一下命令可以得到：</p>
 <p><code>ipython kernelspec list</code></p>
 <p>输出的结果为：</p>
-<img src="/2022/9VBCV6/图片1.png" width="60%" height="40%" align="left">
+<img src="/2022/9VBCV6/图片1.png" width="60%" height="40%">
 
 
 
-<p>由此可知jupyter指定的名为python3的内核使用的环境位置。进入上述目录，找到keral.json文件并打开：</p>
-<img src="/2022/9VBCV6/图片2.png" width="30%" height="20%" align="left">
+<p>​    由此可知jupyter指定的名为python3的内核使用的环境位置。进入上述目录，找到keral.json文件并打开：</p>
+<img src="/2022/9VBCV6/图片2.png" width="30%" height="20%">
 
 
 
@@ -297,6 +297,20 @@
 <h3 id="5、Done"><a href="#5、Done" class="headerlink" title="5、Done"></a>5、Done</h3>]]></content>
       <categories>
         <category>日常问题解决</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>bash functuon</title>
+    <url>/2022/17STT35/</url>
+    <content><![CDATA[<h2 id="bash-function封装一些高频操作"><a href="#bash-function封装一些高频操作" class="headerlink" title="bash function封装一些高频操作"></a>bash function封装一些高频操作</h2><h3 id="1、起因"><a href="#1、起因" class="headerlink" title="1、起因"></a>1、起因</h3><p>在使用linux时，会有一些比较高频的操作，比如打开bashrc文件，这些操作虽然很简单，但是对于想要偷懒的同学，将一些高频的操作封装到一个函数，会大大提高幸福感。</p>
+<h3 id="2、bash-function的使用"><a href="#2、bash-function的使用" class="headerlink" title="2、bash function的使用"></a>2、bash function的使用</h3><p>将一个函数写进你的<code> ~/.bashrc</code>中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">functuon enshort()&#123;</span><br><span class="line">	alias vb&#x3D;&#39;vi ~&#x2F;.bashrc&#39;</span><br><span class="line">	alias vz&#x3D;&#39;vi ~&#x2F;.zshrc&#39;</span><br><span class="line">	alias la&#x3D;&#39;ls -a&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>source ~/.bashrc让刚刚写进的函数生效，然后调用函数enshort就可以使用了，当然，也可以在更高层封装一个环境启动函数或者某个启动脚本中。</p>
+<h3 id="3、结束"><a href="#3、结束" class="headerlink" title="3、结束"></a>3、结束</h3><p>bash function还有很多用处，比如写一些顺序执行的脚本等等，可以大大提高我们工作的效率。</p>
+]]></content>
+      <categories>
+        <category>日常偷懒小技巧</category>
       </categories>
   </entry>
 </search>
